@@ -27,6 +27,7 @@ public:
 	void update(sf::RenderWindow &window);
 	void reset();
 	gridVector levelGrid;
+	sf::FloatRect getBounds();
 
 	std::vector<sf::Vector2i> destinationList;
 	std::vector<sf::Vector2i> startList;
@@ -40,7 +41,7 @@ public:
 
 	State* currentState;
 
-	sf::String state = "Idle";
+	sf::String state = "Driving";
 	sf::String coord = "?,?";
 	sf::String current = "?,?";
 	sf::Vector2i target;

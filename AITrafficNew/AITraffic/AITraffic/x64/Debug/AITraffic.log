@@ -1,5 +1,8 @@
-﻿  Seek.cpp
-f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\seek.cpp(8): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\seek.cpp(33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Car.cpp
+f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\car.cpp(8): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\car.cpp(59): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\car.cpp(64): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\car.cpp(81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\car.cpp(105): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
   AITraffic.vcxproj -> F:\Uni Work\SFML\AITrafficNew\AITraffic\x64\Debug\AITraffic.exe
   AITraffic.vcxproj -> F:\Uni Work\SFML\AITrafficNew\AITraffic\x64\Debug\AITraffic.pdb (Partial PDB)

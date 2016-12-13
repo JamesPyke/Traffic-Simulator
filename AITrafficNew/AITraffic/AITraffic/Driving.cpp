@@ -27,7 +27,8 @@ bool Driving::isCellWithinBounds(const sf::Vector2i &cell)
 //Update state of the car
 void Driving::update(Car &car)
 {
-	
+	car.state = "Driving";
+
 	sf::Vector2i nextPos;
 	//Junction condition, checks if you are at one
 	if (atJunction)
@@ -68,6 +69,8 @@ void Driving::update(Car &car)
 		//sets the current position the the previous to stop the car going back on itself
 		prevPos = *currentPos;
 		*currentPos = nextPos;
+
+		car.current = std::to_string(car.currentPos.x) + ", " + std::to_string(car.currentPos.y);
 	}
 	else
 	{

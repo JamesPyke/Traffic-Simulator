@@ -62,8 +62,13 @@ void Car::reset()
 	currentState->entry(levelGrid);
 	//Picks a radnom location for the car to get to 
 	destination = destinationList[getRandomInt(0, destinationList.size() - 1)];
+	coord = std::to_string(destination.x) + ", " + std::to_string(destination.y);
 	//Sets a random colour on  the car
 	sprCar.setColor(getRandomColour());
+}
+sf::FloatRect Car::getBounds()
+{
+	return sprCar.getGlobalBounds();
 }
 //Gets the car sprites position on the grid
 sf::Vector2f Car::getPosition() const
@@ -100,13 +105,13 @@ void Car::draw(sf::RenderWindow & window)
 	target = sf::Vector2i(sprCar.getPosition().x, sprCar.getPosition().y);
 	window.draw(sprCar);
 	sf::Text stateString;
-	drawText(stateString, state.toAnsiString().c_str(), sf::Vector2i(700, 100));
+	//drawText(stateString, state.toAnsiString().c_str(), sf::Vector2i(700, 100));
 	window.draw(stateString);
 	sf::Text coordString;
-	drawText(coordString, coord.toAnsiString().c_str(), sf::Vector2i(700, 500));
+	//drawText(coordString, coord.toAnsiString().c_str(), sf::Vector2i(700, 500));
 	window.draw(coordString);
 	sf::Text currentString;
-	drawText(currentString, current.toAnsiString().c_str(), sf::Vector2i(700, 300));
+	//drawText(currentString, current.toAnsiString().c_str(), sf::Vector2i(700, 300));
 	window.draw(currentString);
 }
 //Updates the car's state using a transition condition

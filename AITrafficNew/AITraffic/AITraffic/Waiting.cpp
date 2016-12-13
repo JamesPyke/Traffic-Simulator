@@ -16,6 +16,8 @@ void Waiting::entry(gridVector & grid)
 //waits 2 seconds in this state before returning to the driving state 
 void Waiting::update(Car & car)
 {
+	car.state = "Waiting";
+
 	elapsed = clock.getElapsedTime();
 
 	if (elapsed.asSeconds() >= 2)

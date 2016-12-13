@@ -30,11 +30,15 @@ gridVector levelGrid =
 	{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0 },
 	{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0 },
 };
+
+// Car Pointer for UI
+Car* selectedCar;
+
 //initializes font and text
 sf::Font myFont;
 sf::Text atext;
 
-sf::String state = "State: ";
+sf::String state1 = "State: ";
 sf::String coord = "Dest: ";
 sf::String current = "Current: ";
 
@@ -76,8 +80,27 @@ bool initialize(sf::Texture &txtrGrass, sf::Texture &txtrRoad, sf::Texture &txtr
 
 void update(sf::RenderWindow &window)
 {
-	//checks is the right mouse button is clicked
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+	{
+		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+		for (unsigned int i = 0; i < carsList.size(); ++i)
+		{
+			if (isPointWithinRect(mousePosition, carsList[i]->getBounds()))
+			{
+				selectedCar = carsList[i];
+			}
+		}
+	}
+
+	if (selectedCar != nullptr)
+	{
+		state1 = "State: \n" + selectedCar->state;
+		coord = "Dest: \n" + selectedCar->coord;
+		current = "Cur: \n" + selectedCar->current;
+	}
+
+	//checks is the right mouse button is clicked
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
 		Seek *bird = new Seek();
 		bird->Initialize();
@@ -154,9 +177,9 @@ int main()
 	sf::Texture txtrRoad;
 	sf::Texture txtrJunct;
 
-	//Hides the console
-	HWND hWnd = GetConsoleWindow();
-	ShowWindow(hWnd, SW_HIDE);
+	////Hides the console
+	//HWND hWnd = GetConsoleWindow();
+	//ShowWindow(hWnd, SW_HIDE);
 
 	if (!initialize(txtrGrass, txtrRoad, txtrJunct))
 	{
@@ -177,10 +200,11 @@ int main()
 		}
 
 		sf::Text stateString;
-		drawText(stateString, state.toAnsiString().c_str(), sf::Vector2i(650, 10));
+		drawText(stateString, state1.toAnsiString().c_str(), sf::Vector2i(650, 10));
 		sf::Text coordString;
 		drawText(coordString, coord.toAnsiString().c_str(), sf::Vector2i(650, 400));
 		sf::Text curcoordString;
+
 		drawText(curcoordString, current.toAnsiString().c_str(), sf::Vector2i(650, 200));
 
 		update(window);
