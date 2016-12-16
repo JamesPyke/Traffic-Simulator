@@ -1,6 +1,0 @@
-﻿  Main.cpp
-f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\main.cpp(115): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\main.cpp(137): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-f:\uni work\sfml\aitrafficnew\aitraffic\aitraffic\main.cpp(173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  AITraffic.vcxproj -> F:\Uni Work\SFML\AITrafficNew\AITraffic\x64\Debug\AITraffic.exe
-  AITraffic.vcxproj -> F:\Uni Work\SFML\AITrafficNew\AITraffic\x64\Debug\AITraffic.pdb (Partial PDB)
