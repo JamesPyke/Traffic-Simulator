@@ -167,10 +167,4 @@ sf::Vector2i Driving::getNextTile(Car & car)
 
 	return shortest;
 }
-//Random INT generator
-int Driving::getRandomInt(const int & min, const int & max)
-{
-	std::uniform_int_distribution<int> intDistribution(min, max);
-	std::random_device randomDevice;
-	return int(intDistribution(randomDevice));
-}
+

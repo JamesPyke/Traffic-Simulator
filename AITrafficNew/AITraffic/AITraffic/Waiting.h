@@ -1,7 +1,6 @@
 #pragma once
 #include "State.h"
 #include "Util.h"
-#include <random>
 
 class Car;
 
@@ -23,7 +22,5 @@ public:
 	void update(Car &car);
 	bool shouldTransition();
 	State *newState();
-	int getRandomRoute();
-
 };
 

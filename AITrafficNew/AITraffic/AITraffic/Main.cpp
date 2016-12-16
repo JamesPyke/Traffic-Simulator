@@ -80,7 +80,7 @@ bool initialize(sf::Texture &txtrGrass, sf::Texture &txtrRoad, sf::Texture &txtr
 
 void update(sf::RenderWindow &window)
 {
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
 		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 		for (unsigned int i = 0; i < carsList.size(); ++i)
@@ -105,7 +105,7 @@ void update(sf::RenderWindow &window)
 		Seek *bird = new Seek();
 		bird->Initialize();
 	}
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
 	{
 		//checks whether the mouse is within a grid square and generates a car into the car list on a right click 
 		sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
@@ -145,6 +145,10 @@ void draw(sf::RenderWindow &window, sf::Texture &txtrGrass, sf::Texture &txtrRoa
 					break;
 				case 3:
 					sprCurrentSection.setTexture(txtrJunct);
+					break;
+				default:
+					sprCurrentSection.setTexture(txtrRoad);
+					break;
 			}
 			window.draw(sprCurrentSection);
 		}

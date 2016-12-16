@@ -36,12 +36,3 @@ State * Waiting::newState()
 {
 	return nextState;
 }
-
-int Waiting::getRandomRoute()
-{
-	std::uniform_int_distribution<int> intDistribution(1, 4);
-	std::random_device randomDevice;
-	return int(intDistribution(randomDevice));
-}
-
-
