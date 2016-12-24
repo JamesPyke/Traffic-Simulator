@@ -1,6 +1,7 @@
 #include "Seek.h"
 
-
+//Runs the seek function, gathering a direction and a target location then forming 
+//a direction vector based on the starting location
 
 void Seek::Think()
 {

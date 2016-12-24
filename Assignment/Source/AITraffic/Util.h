@@ -3,7 +3,9 @@
 #include <vector>
 #include "SFML\Graphics.hpp"
 
+//Size of the grid squares (pixels)
 const int TILE_SIZE = 32;
+//Size of grid
 const int GRID_SIZE_X = 20;
 const int GRID_SIZE_Y = 20;
 const int WIN_X = TILE_SIZE * GRID_SIZE_X + 200;

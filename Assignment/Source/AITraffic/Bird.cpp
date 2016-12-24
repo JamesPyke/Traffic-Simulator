@@ -2,12 +2,6 @@
 
 std::vector<Bird*> Bird::Renderables;
 
-Bird::Bird()
-{
-	//Initialize();
-}
-
-
 void Bird::Think()
 {
 	// build a new position vector by adding a scaled version of the velocity vector

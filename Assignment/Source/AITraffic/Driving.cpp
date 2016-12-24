@@ -135,8 +135,6 @@ sf::Vector2i Driving::getNextTile(Car & car)
 	sf::Vector2i shortest = sf::Vector2i(0,0);
 	float minDist = FLT_MAX;
 
-	//TODO: refactor the following into a function to save repeating code
-
 	// check north
 	if (getDistance(car.getDestination(), northCell) < minDist)
 	{
@@ -157,14 +155,12 @@ sf::Vector2i Driving::getNextTile(Car & car)
 		shortest = southCell;
 		minDist = getDistance(car.getDestination(), southCell);
 	}
-
 	// west
 	if (getDistance(car.getDestination(), westCell) < minDist)
 	{
 		shortest = westCell;
 		minDist = getDistance(car.getDestination(), westCell);
 	}
-
 	return shortest;
 }
 

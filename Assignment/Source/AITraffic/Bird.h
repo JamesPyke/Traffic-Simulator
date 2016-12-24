@@ -10,8 +10,6 @@ class Bird : public sf::Transformable
 public:
 
 	static std::vector<Bird*> Renderables;
-
-	Bird();
 	virtual void Think();
 	virtual void Initialize();
 	sf::Sprite GetSprite() { return sprite; }

@@ -7,8 +7,6 @@
 class UtilRandom
 {
 public:
-	UtilRandom();
-	~UtilRandom();
 
 	// GetRange returns a random number between min and max
 	// it is poorly named, we're not really getting a range...
